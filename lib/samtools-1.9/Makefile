@@ -80,16 +80,18 @@ MISC_SCRIPTS = \
 	misc/soap2sam.pl \
 	misc/varfilter.py misc/wgsim_eval.pl misc/zoom2sam.pl
 
-TEST_PROGRAMS = \
-	test/merge/test_bam_translate \
-	test/merge/test_rtrans_build \
-	test/merge/test_trans_tbl_init \
-	test/split/test_count_rg \
-	test/split/test_expand_format_string \
-	test/split/test_filter_header_rg \
-	test/split/test_parse_args \
-	test/vcf-miniview
+#TEST_PROGRAMS = \
+#	test/merge/test_bam_translate \
+#	test/merge/test_rtrans_build \
+#	test/merge/test_trans_tbl_init \
+#	test/split/test_count_rg \
+#	test/split/test_expand_format_string \
+#	test/split/test_filter_header_rg \
+#	test/split/test_parse_args \
+#	test/vcf-miniview
 
+# FUZZING PATCH: These literally do not build.
+TEST_PROGRAMS :=
 all: $(PROGRAMS) $(MISC_PROGRAMS) $(TEST_PROGRAMS)
 
 ALL_CPPFLAGS = -I. $(HTSLIB_CPPFLAGS) $(LZ4_CPPFLAGS) $(CPPFLAGS)
